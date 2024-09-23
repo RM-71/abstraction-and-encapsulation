@@ -14,10 +14,12 @@ class BankAccount{
 		void depositAmount(float amount) {
 			balance += amount;
 			cout << "Deposited: " << amount << endl;
+			cout << "Amount Deposited Successfully" << endl;
 		}
 		void withdrawAmount (float amount) {
            	 	balance -= amount; 
-           		 cout << "Withdraw: " << amount << endl; 
+           		cout << "Withdraw: " << amount << endl; 
+			cout << "Amount Withdrawn Successfully" << endl;
 		}
 };
 class SavingAccount : public BankAccount{
@@ -30,7 +32,7 @@ class SavingAccount : public BankAccount{
 				if (getBalance() - amount >= 1000) 
 					withdrawAmount(amount);
 				else 
-					cout << "Error: Insufficient Fund" << endl;
+					cout << "Error: Insufficient Balance Must Be Above 1000" << endl;
 			}
 		}
 };
