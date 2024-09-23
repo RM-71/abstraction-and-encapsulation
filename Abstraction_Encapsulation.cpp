@@ -16,11 +16,10 @@ class BankAccount{
 			cout << "Deposited: " << amount << endl;
 		}
 		void withdrawAmount (float amount) {
-            balance -= amount; 
-            cout << "Withdraw: " << amount << endl; 
+           	 	balance -= amount; 
+           		 cout << "Withdraw: " << amount << endl; 
 		}
 };
-
 class SavingAccount : public BankAccount{
 	public:
 		SavingAccount (float savingbal = 1000) : BankAccount (savingbal){}
@@ -35,7 +34,6 @@ class SavingAccount : public BankAccount{
 			}
 		}
 };
-
 class CurrentAccount : public BankAccount{
 	public:
 		CurrentAccount (float currentbal = 0) : BankAccount (currentbal){}
@@ -46,7 +44,6 @@ class CurrentAccount : public BankAccount{
             	withdrawAmount(amount);	
 		}
 };
-
 bool isNumeric(const string& str, string typevar) {
 	bool dp = false;
     for (int i = 0; i < str.length(); i++) {
@@ -73,7 +70,6 @@ float validInput(const string typevar) {
         	else
         		return stoi(input);
 }
-
 void subMenu(int choice, BankAccount* account, string typeaccount, bool subvalid){
 	float amount;
 	while(!(subvalid)){
@@ -117,7 +113,6 @@ void subMenu(int choice, BankAccount* account, string typeaccount, bool subvalid
 		}
 	}
 }
-
 int main (){
 	SavingAccount saving;
     CurrentAccount current;
@@ -131,7 +126,6 @@ int main (){
 		cout << "Enter Choice: ";
 		choice = validInput("int");
 		system ("cls");
-		
 		switch (choice){
 		case 1:
 			subMenu(choice, &saving, "Savings", false);
